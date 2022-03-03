@@ -22,7 +22,7 @@ git push -u origin main
 ```
 
 ## 動作サンプル
-![動作サンプル](/_description/sample1.jpg "動作サンプル")
+![動作サンプル](/_description/sample2.jpg "動作サンプル")
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

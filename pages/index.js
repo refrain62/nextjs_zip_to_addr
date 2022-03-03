@@ -4,8 +4,60 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
 
+  // 都道府県一覧
+  let prefectureList = [
+    { id: 1, text: "北海道"},
+    { id: 2, text: "青森県"},
+    { id: 3, text: "岩手県"},
+    { id: 4, text: "宮城県"},
+    { id: 5, text: "秋田県"},
+    { id: 6, text: "山形県"},
+    { id: 7, text: "福島県"},
+    { id: 8, text: "茨城県"},
+    { id: 9, text: "栃木県"},
+    { id: 10, text: "群馬県"},
+    { id: 11, text: "埼玉県"},
+    { id: 12, text: "千葉県"},
+    { id: 13, text: "東京都"},
+    { id: 14, text: "神奈川県"},
+    { id: 15, text: "新潟県"},
+    { id: 16, text: "富山県"},
+    { id: 17, text: "石川県"},
+    { id: 18, text: "福井県"},
+    { id: 19, text: "山梨県"},
+    { id: 20, text: "長野県"},
+    { id: 21, text: "岐阜県"},
+    { id: 22, text: "静岡県"},
+    { id: 23, text: "愛知県"},
+    { id: 24, text: "三重県"},
+    { id: 25, text: "滋賀県"},
+    { id: 26, text: "京都府"},
+    { id: 27, text: "大阪府"},
+    { id: 28, text: "兵庫県"},
+    { id: 29, text: "奈良県"},
+    { id: 30, text: "和歌山県"},
+    { id: 31, text: "鳥取県"},
+    { id: 32, text: "島根県"},
+    { id: 33, text: "岡山県"},
+    { id: 34, text: "広島県"},
+    { id: 35, text: "山口県"},
+    { id: 36, text: "徳島県"},
+    { id: 37, text: "香川県"},
+    { id: 38, text: "愛媛県"},
+    { id: 39, text: "高知県"},
+    { id: 40, text: "福岡県"},
+    { id: 41, text: "佐賀県"},
+    { id: 42, text: "長崎県"},
+    { id: 43, text: "熊本県"},
+    { id: 44, text: "大分県"},
+    { id: 45, text: "宮崎県"},
+    { id: 46, text: "鹿児島県"},
+    { id: 47, text: "沖縄県"}
+  ];
+
   const [ zipcode, setZipcode ] = React.useState("");
   const [ prefecture, setPrefecture ] = React.useState("");
+  const [ prefcode, setPrefcode ] = React.useState("");
   const [ city, setCity ] = React.useState("");
   const [ town, setTown ] = React.useState("");
 
@@ -57,13 +109,15 @@ export default function Home() {
 //console.log( result );
 
           // とりあえず複数取れても１件目を設定
-          setPrefecture( result.results[0].address1 );
+//          setPrefecture( result.results[0].address1 );
+          setPrefcode( result.results[0].prefcode );
           setCity( result.results[0].address2 );
           setTown( result.results[0].address3 );
         }
         else
         {
-          setPrefecture( "" );
+//          setPrefecture( "" );
+          setPrefcode( "" );
           setCity( "" );
           setTown( "" );
         }
@@ -94,15 +148,21 @@ export default function Home() {
               onChange= { (e) => setZipcode( e.target.value )}
               />
           </div>
-          
+
           <div>
             <span>都道府県：</span>
 
-            <input
-              type="text"
-              value={prefecture}
-              onChange= { (e) => setPrefecture( e.target.value )}
-              />
+            <select
+              value={prefcode}
+              onChange= { (e) => setPrefcode( e.target.value )}
+              >
+              <option></option>
+
+              { prefectureList.map( data => {
+                return ( <option value={data.id}>{data.text}</option> )
+              }) }
+            </select>
+
           </div>
           
           <div>
