@@ -21,6 +21,7 @@ git remote add origin https://github.com/refrain62/nextjs_zip_to_addr.git
 git push -u origin main
 ```
 
+## 動作サンプル
 ![動作サンプル](./_description/sample1.jpg.jpg "動作サンプル")
 
 
