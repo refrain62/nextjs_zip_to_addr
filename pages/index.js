@@ -104,6 +104,8 @@ export default function Home() {
         // データがあれば設定し、無ければクリア
         if(     result !== null
             &&  result.status == '200'
+            &&  result.results !== null
+            &&  result.results.length > 0
             )
         {
 //console.log( result );
