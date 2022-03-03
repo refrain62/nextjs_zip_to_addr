@@ -2,6 +2,8 @@
 巷でにぎわっているのでNext.jsでの実装をしてみた   
 APIはとり急ぎ有志のAPIを使わせてもらう。  
 https://zipaddress.net/#terms   
+or
+http://zipcloud.ibsnet.co.jp/doc/api   
 
 
 ## Next.jsのアプリセットアップ
